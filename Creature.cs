@@ -44,6 +44,7 @@ public class Creature : Entity {
     private void TakeFromContainer(StorageContainer storageContainer) {
         if (inventory == null) {
             inventory = storageContainer.OutgoingEntity(0);
+            Debug.Log("Taken object");
         } else {
             Debug.Log("Inventory full!");
         }
@@ -53,6 +54,7 @@ public class Creature : Entity {
         if (inventory != null) {
             Instantiate(inventory);
             inventory = null;
+            Debug.Log("Dropped object");
         } else {
             Debug.Log("Inventory empty!");
         }
@@ -62,6 +64,7 @@ public class Creature : Entity {
         if (inventory != null) {
             inventory = newInventoryItem;
             newInventoryItem.Taken();
+            Debug.Log("Picked up object");
         } else {
             Debug.Log("Inventory full!");
         }
