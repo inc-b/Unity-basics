@@ -10,14 +10,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
+[RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 public class StorageContainer : MonoBehaviour {
 
     [SerializeField] private int maxCapacity = 3;
-    private int currentCapacity = 3;
     private List<Entity> containerContents = new List<Entity>();
 
     public bool IncomingEntity(Entity newEntity) {
-        if (currentCapacity > 0) {
+        if (containerContents.Count < maxCapacity) {
             containerContents.Add(newEntity);
             return true;
         } else {
