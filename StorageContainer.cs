@@ -20,6 +20,7 @@ public class StorageContainer : MonoBehaviour {
     public bool IncomingEntity(Entity newEntity) {
         if (containerContents.Count < maxCapacity) {
             containerContents.Add(newEntity);
+            Debug.Log("Item added");
             return true;
         } else {
             Debug.Log("Container Full!");
@@ -31,6 +32,7 @@ public class StorageContainer : MonoBehaviour {
         if (containerContents.Count != 0) {
             Entity returnEntity = containerContents[entitySelected];
             containerContents.Remove(returnEntity);
+            Debug.Log("Item taken");
             return returnEntity;
         } else {
             Debug.Log("Container Empty");
