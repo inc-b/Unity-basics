@@ -4,6 +4,8 @@
  * Created 2019-02-22
  *
  * Living creatures that move around the world
+ * Has attributes like movement speed, turning speed, health, stamina, etc
+ * This class has no brain - an extension of the class is required to provide control
  * Extends from default entity class
  */
 
