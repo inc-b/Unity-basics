@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class standardBrain : MonoBehaviour {
+public class Creature : MonoBehaviour {
 	
 	// Technical attributes
 	Animator myAnimator;
 	Collider mySensor;
 
 	// Physical stats
-    public float mySpeed = 100.0f; // How fast can I move?
+    	public float mySpeed = 100.0f; // How fast can I move?
 	float myDefaultSpeed = speed;
 	public float myHealth = 100.0f; // How strong/healthy am I?
 	float myDefaultHealth = health;
