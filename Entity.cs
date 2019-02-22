@@ -1,3 +1,4 @@
+
 /**
  * Entity.cs
  * Joe Ford
@@ -19,4 +20,7 @@ public class Entity : MonoBehaviour {
     [SerializeField] private float weight = 1.0f;
     [SerializeField] public int size = 1;
 
+    public void Taken() {
+
+    }
 }
