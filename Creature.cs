@@ -1,7 +1,16 @@
+/**
+ * Creature.cs
+ * Joe Ford
+ * Created 2019-02-22
+ *
+ * Living creatures that move around the world
+ * Extends from default entity class
+ */
+
 using UnityEngine;
 using System.Collections;
 
-public class Creature : MonoBehaviour {
+public class Creature : Entity {
 	
 	// Technical attributes
 	Animator myAnimator;
