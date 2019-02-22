@@ -1,0 +1,28 @@
+/**
+ * StorageContainer.cs
+ * Joe Ford
+ * Created 2019-02-22
+ *
+ * Entity that can hold other entities
+ * Has a max capacity
+ */
+
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Entity : MonoBehaviour {
+    
+    [SerializeField] private int maxCapacity = 3;
+    private int currentCapactiy = 3;
+    private List<GameObject> containerContents = new List<<GameObject>();
+    
+    public void IncomingObject(GameObject newEntity) {
+      if (currentCapacity > 0) {
+        containerContents.Add(newEntity);
+        return true;
+      } else {
+        Debug.Log("Container Full!");
+        return false;
+      }
+    }
+}
