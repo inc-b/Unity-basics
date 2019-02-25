@@ -3,8 +3,13 @@
  * Joe Ford
  * Created 2019-02-22
  *
- * Entity that can hold other entities
+ * Object that can hold entities
  * Has a max capacity
+ *
+ * TO IMPLEMENT
+ * A storage container must be attached to an entity and an entity with a storage container attached can't be put into a storage container
+ * The contents of a storage container are based on the current time, the time it was last updated/viewed, and the action of the entity it is attached to
+ * Eg, a hopper attached to a furnace - the hopper entity will send the inventory details, current time, and last update time to the furnace entity, calculate a result then both entities will update their attached storage containers
  */
 
 using System.Collections.Generic;
