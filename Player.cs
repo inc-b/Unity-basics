@@ -3,8 +3,9 @@
  * Joe Ford
  * Created 2019-02-22
  *
- * Take input from various sources (eg, keyboard, mouse, gamepad) and control a player character.
- * Allows first person and third person
+ * Base player character class defining standard attributes and functions
+ * Attributes: weight, size, mesh, movement speed, turning speed, health, stamina, mana
+ * Functions: take item, give item, drop item, take damage, spend staminda, use mana, heal attributes
  * Extends from default creature class
  */
 
