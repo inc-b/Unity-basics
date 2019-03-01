@@ -1,4 +1,3 @@
-
 /**
  * Entity.cs
  * Joe Ford
@@ -13,14 +12,20 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 public class Entity : MonoBehaviour {
-    Rigidbody rigidbody;
-    BoxCollider collider;
-    Mesh mesh;
+    new protected Rigidbody rb;
+    new protected BoxCollider boxCollider;
+    protected Mesh mesh;
 
     [SerializeField] private float weight = 1.0f;
     [SerializeField] public int size = 1;
 
-    public void Taken() {
+    protected void Start() {
+        rb = this.GetComponent<Rigidbody>();
+        boxCollider = this.GetComponent<BoxCollider>();
+        mesh = this.GetComponent<Mesh>();
+    }
 
+    public void Taken() {
+        //
     }
 }
