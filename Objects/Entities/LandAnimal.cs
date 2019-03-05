@@ -12,6 +12,20 @@
 using UnityEngine;
 
 public class LandAnimal : Creature {
+     private void FixedUpdate() {
+        if (isMoving && touchingGround) {
+            transform.Translate(moveDirection * Time.deltaTime, Space.Self);
+        }
+        if (turningRight) {
+            transform.Rotate(0, turnSpeed, 0, Space.World);
+        }
+
+        if (turningLeft) {
+            transform.Rotate(0, -turnSpeed, 0, Space.World);
+        }
+        
+    }
+ 
   // Movement functions
 
     private void OnCollisionEnter(Collision collision) {
