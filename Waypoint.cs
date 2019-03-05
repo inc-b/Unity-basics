@@ -8,7 +8,7 @@
  
 using UnityEngine;
 
-public class Waypoint : Monobehaviour {
+public class Waypoint : MonoBehaviour {
   
   public List<Waypoint> neighbours;
   
