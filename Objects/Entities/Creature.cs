@@ -9,6 +9,7 @@
  * Extends from default entity class
  *
  * A creature can move around the world, run into structures, pick entities up, drop entities
+ * Way points are used to dictate where a creature can go
  */
  
  using UnityEngine;
@@ -37,73 +38,6 @@ public class Creature : Entity {
         currentStamina = stamina;
     }
 
-    private void FixedUpdate() {
-        if (isMoving && touchingGround) {
-            transform.Translate(moveDirection * Time.deltaTime, Space.Self);
-        }
-        if (turningRight) {
-            transform.Rotate(0, turnSpeed, 0, Space.World);
-        }
-
-        if (turningLeft) {
-            transform.Rotate(0, -turnSpeed, 0, Space.World);
-        }
-        
-    }
-
-
-    // Movement functions
-
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("GROUND")) {
-            touchingGround = true;
-            isJumping = false;
-        }
-    }
-        
-    private void OnCollisionExit(Collision collision) {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("GROUND")) {
-            touchingGround = false;
-        }
-    }
-
-    public void walkForward() {
-        isMoving = true;
-        moveDirection = Vector3.forward;
-    }
-
-    public void walkBackward() {
-        if (isMoving) {
-            isMoving = false;
-        } else {
-            isMoving = true;
-            moveDirection = Vector3.back;
-        }
-    }
-
-    public void turnTo(float turnAngle) {
-        if (turnAngle > 0) {
-            turningRight = true;
-            turningLeft = false;
-        } else {
-            turningRight = false;
-            turningLeft = true;
-        }
-    }
-
-    public void stopMoving() {
-        isMoving = false;
-        turningLeft = false;
-        turningRight = false;
-        moveDirection = Vector3.zero;
-    }
-
-    public void jump() {
-        if (touchingGround) {
-            isJumping = true;
-            rb.AddForce(new Vector3(0, jumpSpeed, 0), ForceMode.Impulse);
-        }
-    }
 
 
 
