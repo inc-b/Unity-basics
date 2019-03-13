@@ -10,6 +10,9 @@
  *
  * A creature can move around the world, run into structures, pick entities up, drop entities
  * Way points are used to dictate where a creature can go
+ *
+ * TDL
+ * Implement movement - movement commands will be as methods. Eg, MoveForward, TurnLeft, TurnRight
  */
  
  using UnityEngine;
